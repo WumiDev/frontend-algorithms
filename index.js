@@ -27,6 +27,8 @@ let convertFahrToCelsius = fahr => {
 // console.log(convertFahrToCelsius({temp: '123'}))
 // console.log(convertFahrToCelsius('abc'))
 
+
+
 /* ############################################################################################### */
 
 // BASIC JAVASCRIPT ALGORITHM 2: checkYuGiOh
