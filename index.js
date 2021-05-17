@@ -1,4 +1,35 @@
-// BASIC JAVASCRIPT ALGORITHM 1: checkYuGiOh
+// BASIC JAVASCRIPT ALGORITHM 1: convertFahrToCelsius
+
+/* 
+# The "convertFahrToCelsius" function below accepts "fahr" as an argument, and checks the data type of "fahr".
+# If the data type of "fahr" is either "number" or "string", "fahr" is converted into celcius. 
+# Otherwise an error message is returned stating that fahr is is not a valid number while indicating the invalid data type.
+*/
+
+let convertFahrToCelsius = fahr => {
+    let parameterType = Object.prototype.toString.call(fahr).slice(8, -1);
+    if (parameterType === "Number" || parameterType === "String") {
+        parsedFahr = parseFloat(fahr);
+        if(!isNaN(parsedFahr)){
+            let celsius = (parsedFahr - 32)*5/9;
+            return celsius.toFixed(4);
+        } else {
+            return `${JSON.stringify(fahr)} is not a valid number but a/an ${parameterType}`;
+        }       
+    } else {
+        return `${JSON.stringify(fahr)} is not a valid number but a/an ${parameterType}`;
+    }   
+}
+
+// convertFahrToCelsius(0)
+// convertFahrToCelsius('0')
+// convertFahrToCelsius([1,2,3])
+// console.log(convertFahrToCelsius({temp: '123'}))
+// console.log(convertFahrToCelsius('abc'))
+
+/* ############################################################################################### */
+
+// BASIC JAVASCRIPT ALGORITHM 2: checkYuGiOh
 
 /* 
 # The "checkYuGiOh" function below accepts an Integer "num" as an argument, and checks the data type of "num"
@@ -63,34 +94,3 @@ let checkYuGiOh = num => {
 // checkYuGiOh(10);
 // checkYuGiOh(5);
 // checkYuGiOh("fizzbuzz is meh")
-
-// ###############################################################################################
-
-// BASIC JAVASCRIPT ALGORITHM 2: convertFahrToCelsius
-
-/* 
-# The "convertFahrToCelsius" function below accepts "fahr" as an argument, and checks the data type of "fahr".
-# If the data type of "fahr" is either "number" or "string", "fahr" is converted into celcius. 
-# Otherwise an error message is returned stating that fahr is is not a valid number while indicating the invalid data type.
-*/
-
-let convertFahrToCelsius = fahr => {
-    let parameterType = Object.prototype.toString.call(fahr).slice(8, -1);
-    if (parameterType === "Number" || parameterType === "String") {
-        parsedFahr = parseFloat(fahr);
-        if(!isNaN(parsedFahr)){
-            let celsius = (parsedFahr - 32)*5/9;
-            return celsius.toFixed(4);
-        } else {
-            return `${JSON.stringify(fahr)} is not a valid number but a/an ${parameterType}`;
-        }       
-    } else {
-        return `${JSON.stringify(fahr)} is not a valid number but a/an ${parameterType}`;
-    }   
-}
-
-// convertFahrToCelsius(0)
-// convertFahrToCelsius('0')
-// convertFahrToCelsius([1,2,3])
-// console.log(convertFahrToCelsius({temp: '123'}))
-// console.log(convertFahrToCelsius('abc'))
